@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Christianity Post{% endblock %}</title>
-    <!--style.css file linker-->
-    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+   
+    <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
 </head>
 <body>
-<!-- Header / Navigation block-->
-<header class=""site-header">
+
+<header class="site-header">
     <nav class="navbar">
         <div class="logo">
-            <a href=""{% url 'blog:post_list' %}">Christianity Post</a>
+            <a href="{% url 'blog:home' %}">Christianity Post</a>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <ul><a href="#">Blog</a></ul>
-            <ul><a href="#">Reflections</a>a></ul>
-            <ul><a href="#">Quiz</a></ul>
-            <ul><a href="#">Subscribe</a></ul>
-            <ul><a href="#">About</a></ul>
+            <li><a href="{% url 'blog:home' %}">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Reflections</a></li>
+            <li><a href="#">Quiz</a></li>
+            <li><a href="#">Subscribe</a></li>
+            <li><a href="#">About</a></li>
         </ul>
     </nav>
 </header>
