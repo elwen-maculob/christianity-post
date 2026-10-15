@@ -1,32 +1,6 @@
 {% extends 'blog/base.html' %}
-{% load static %}
-{% block title %}Christianity Post - Home{% endblock %}
-
+{% block title %}Home - Christianity Post{% endblock %}
 {% block content %}
-<div class="container">
-    <section class="hero">
-        <h1>Know Jesus, Know the Truth</h1>
-        <p>Read our latest posts and reflections on Christian living.</p>
-    </section>
-    <section class="featured-post-section">
-        <h2>Featured Posts</h2>
-        <div class="posts-grid">
-            {% for post in featured_posts %}
-                <article class="post-card">
-                    {% if post.featured_image %}
-                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
-                    {% endif %}
-
-                    <div class="post-card-content">
-                        <h3>{{ post.title }}</h3>
-                        <p>{{ post.content|truncatewords:30 }}</p>
-                        <a href="{% url 'blog:post_detail' post.pk %}" class="read-more">Read More</a>
-                    </div>
-                </article>
-            {% empty %}
-                <p>No featured posts available.</p>
-            {% endfor %}
-        </div>
-    </section>
-</div>
+    <h2>Welcome to Christianity Post</h2>
+    <p>This is the home page of the Christianity Post blog.</p>
 {% endblock %}

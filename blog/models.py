@@ -21,8 +21,8 @@ class Post(models.Model):
     content = models.TextField()
     verse_highlight = models.TextField(blank=True, null=True, help_text="Optional scripture verse to meditate on.")
     featured_image = models.ImageField(upload_to='featured_images/', blank=True, null=True)
-    created_on = models.DateTimeField()
-    updated_on = models.DateTimeField()
+    created_on = models.DateField()
+    updated_on = models.DateField()
     status = models.IntegerField(choices=STATUS_CHOICES, default=0)
     is_featured = models.BooleanField(default=False, help_text="Check this box to feature this post on the homepage.")
 

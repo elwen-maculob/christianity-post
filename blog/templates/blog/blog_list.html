@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% block title %}Blog_list - Christianity Post{% endblock %}
+{% block content %}
+<div class="blog-list-container">
+    <h2>Blog Posts</h2>
+
+    <div class="blog-list">
+        {% for post in blog_list %}
+            <div class="blog-card">
+                <a href="{% url 'blog:post_detail' post.slug %}">
+                    {% if post.featured_image %}
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="featured-post-image">
+                    {% endif %}
+                    <h3>{{ post.title }}</h3>
+                </a>
+                <p class="post-date">{{ post.created_on|date:"F j, Y" }}</p>
+            </div>
+        {% empty %}
+            <p>No blog posts available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

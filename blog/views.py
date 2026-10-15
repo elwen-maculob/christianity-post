@@ -14,7 +14,7 @@ class HomeView(ListView):
 class BlogListView(ListView):
     model = Post
     template_name = 'blog/blog_list.html'
-    context_object_name = 'blog_post'
+    context_object_name = 'blog_list'
     def get_queryset(self):
         return Post.objects.filter(category__name='Blog', status=1).order_by('-created_on')
 #3. For 600 words reflection posts
@@ -29,3 +29,8 @@ class PostDetailView(DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
     context_object_name = 'post'
+#5. About page view
+class AboutView(DetailView):
+    template_name = 'blog/about.html' 
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)

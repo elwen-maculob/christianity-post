@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% block title %}Post Detail - Christianity Post{% endblock %}
+{% block content %}
+    <div class="post-container">
+        {% if post.featured_image %}
+            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="post-detail-image">
+        {% endif %}
+        <h1>{{ post.title }}</h1>
+        <div class="post-body">
+            <p>{{ post.content|safe|linebreaks }}</p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,39 +1,28 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Christianity Post{% endblock %}</title>
-   
-    <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
-</head>
-<body>
-
-<header class="site-header">
-    <nav class="navbar">
-        <div class="logo">
-            <a href="{% url 'blog:home' %}">Christianity Post</a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="{% url 'blog:home' %}">Home</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Reflections</a></li>
-            <li><a href="#">Quiz</a></li>
-            <li><a href="#">Subscribe</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-    </nav>
-</header>
-<!-- Main Dynamic Content Block -->
- <main class="main-content">
-    {% block content %}
-    {% endblock %}
-</main>
-
-<!-- Footer Block -->
- <footer class="site-footer">
-    <p>&copy; 2026 Christianity Post. All rights reserved.</p>
-</footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Christianity Post{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    </head>
+    <body>
+        <header class="site-header">
+            <img src="{% static 'blog/featured_images/cp_logo.jpg' %}" alt="Christianity Post Logo" class="site-logo">
+            <h1>Christianity Post</h1>
+            <ul>
+                <li><a href="{% url 'blog:home' %}">Home</a></li>
+                <li><a href="{% url 'blog:blog_list' %}">Blog</a></li>
+                <li><a href="{% url 'blog:about' %}">About</a></li>
+            </ul>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer class="site-footer">
+            <p>&copy; 2026 Christianity Post. All rights reserved.</p>
+        </footer>
+    </body>
 </html>
