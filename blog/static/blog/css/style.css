@@ -1,0 +1,348 @@
+/* ==========================================================
+   1. GLOBAL & BASE LAYOUT (base.html)
+   ========================================================== */
+/* Sets the document and body to full height and uses Flexbox to make the footer stick to the bottom */
+html, body {
+    height: 100%;             /* Fills 100% of the browser viewport height */
+    margin: 0;                /* Removes default browser body margins */
+    display: flex;            /* Turns body into a flex container */
+    flex-direction: column;   /* Stacks child elements vertically (header -> main -> footer) */
+}
+
+/* Forces the main content area to expand and push the footer down if the page is short */
+main {
+    flex: 1;                  /* Takes up all remaining vertical space on the page */
+}
+
+/* Styles the top navigation bar header */
+.site-header {
+    background-color: #21152a;/* Deep plum background color */
+    padding: 10px 20px;       /* Adds inner spacing inside the header */
+    display: flex;            /* Uses flexbox to space out logo/title and nav links */
+    justify-content: space-between; /* Pushes items to opposite left and right edges */
+    align-items: center;      /* Vertically centers items in the header */
+}
+
+/* Styles the brand title/logo container inside the header */
+.site-header h1 {
+    display: flex;            /* Aligns inner elements flexibly */
+    align-items: center;      /* Centers logo image and text vertically */
+    text-decoration: none;    /* Removes underlines */
+    color: #c5a059;           /* Gold brand text color */
+}
+
+/* Sets default link colors in the header */
+.site-header a {
+    text-decoration: none;    /* Removes default link underlines */
+    color: #fff;              /* White link text color */
+}
+
+/* Changes link color to gold when hovered */
+.site-header a:hover {
+    color: #c5a059;           /* Gold accent on mouse hover */
+}
+
+/* Styles the navigation link list in the header */
+.site-header ul {
+    display: flex;            /* Places navigation links side-by-side horizontally */
+    list-style-type: none;    /* Removes bullet points from the list */
+    margin: 0;                /* Removes default margins */
+    padding: 0;               /* Removes default padding */
+    gap: 20px;                /* Adds even spacing between navigation items */
+}
+
+/* Styles the header circular brand logo image */
+.site-logo {
+    background: transparent !important; /* Forces transparent background backdrop */
+    max-width: 150px;         /* Sets max width constraint for the logo */
+    height: 150px;            /* Sets fixed height */
+    border-radius: 50%;       /* Crops the logo into a perfect circle */
+    object-fit: contain;      /* Ensures the whole logo fits inside its box without cropping */
+    margin-right: 10px;       /* Adds spacing to the right of the logo */
+    mix-blend-mode: screen;   /* Blends white backdrops smoothly into the dark header */
+}
+
+/* Styles the bottom website footer bar */
+.site-footer {
+    background-color: #21152a;/* Matches the deep plum header background */
+    padding: 10px 20px;       /* Adds inner spacing inside the footer */
+    display: flex;            /* Uses flexbox layout */
+    justify-content: space-between; /* Spaces footer elements across the width */
+    align-items: center;      /* Vertically centers footer contents */
+}
+
+/* Styles the copyright text inside the footer */
+.site-footer p {
+    margin: 0;                /* Removes default paragraph margins */
+    color: #fff;              /* White text color */
+}
+
+
+/* ==========================================================
+   2. HOME PAGE & EDITORIAL HERO (index.html)
+   ========================================================== */
+/* Styles the immersive Option 1 magazine hero banner at the top of the homepage */
+.editorial-hero {
+    position: relative;       /* Establishes positioning context for child elements */
+    width: 100%;              /* Fills full screen width */
+    height: 480px;            /* Sets prominent banner height */
+    background: linear-gradient(rgba(33, 21, 42, 0.7), rgba(33, 21, 42, 0.85)), url('https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=1600&auto=format&fit=crop'); /* Dark plum gradient overlay blended over background photo */
+    background-size: cover;   /* Scales background image to cover section completely */
+    background-position: center; /* Centers the background image focal point */
+    display: flex;            /* Uses flexbox to center content */
+    align-items: center;      /* Vertically centers hero content */
+    justify-content: center;  /* Horizontally centers hero content */
+    text-align: center;       /* Center-aligns all text inside */
+    color: #ffffff;           /* Default white text color */
+    padding: 0 20px;          /* Adds left/right padding */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3); /* Adds soft depth shadow beneath hero */
+}
+
+/* Positions and confines the text container inside the hero banner */
+.hero-content {
+    position: relative;       /* Relative positioning */
+    z-index: 2;               /* Places content above the background overlay */
+    max-width: 800px;         /* Limits text block width for clean reading lines */
+}
+
+/* Styles the "Featured Message" pill badge above the hero title */
+.hero-badge {
+    display: inline-block;    /* Treats badge as an inline block element */
+    background-color: #c5a059;/* Accent gold background color */
+    color: #21152a;           /* Deep plum text color for high contrast */
+    font-size: 0.75rem;       /* Small uppercase label font size */
+    font-weight: 700;         /* Bold font weight */
+    text-transform: uppercase;/* Forces uppercase lettering */
+    letter-spacing: 1.5px;    /* Spaces out characters for elegance */
+    padding: 6px 14px;        /* Inner padding inside the pill badge */
+    border-radius: 20px;      /* Fully rounds pill corners */
+    margin-bottom: 15px;      /* Spacing below badge */
+}
+
+/* Styles the large headline inside the editorial hero */
+.editorial-hero h1 {
+    font-size: 2.8rem;        /* Large impactful title font size */
+    font-weight: 700;         /* Heavy bold weight */
+    color: #ffffff;           /* Crisp white text color */
+    margin-bottom: 15px;      /* Spacing below title */
+    line-height: 1.2;         /* Tight line height for headings */
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5); /* Soft shadow for text readability */
+}
+
+/* Styles descriptive subtitle text inside the hero banner */
+.editorial-hero p {
+    font-size: 1.15rem;       /* Comfortable subtitle font size */
+    color: #e0e0e0;           /* Soft light-gray text color */
+    margin-bottom: 25px;      /* Spacing below paragraph */
+    line-height: 1.6;         /* Line height spacing */
+}
+
+/* Styles the call-to-action button inside the editorial hero */
+.hero-btn {
+    display: inline-block;    /* Inline block layout */
+    background-color: transparent; /* Transparent fill initially */
+    color: #c5a059;           /* Gold text color */
+    border: 2px solid #c5a059;/* Gold solid border outline */
+    padding: 10px 24px;       /* Button inner padding */
+    font-size: 0.95rem;       /* Button text size */
+    font-weight: 650;         /* Semi-bold font weight */
+    text-decoration: none;    /* Removes underlines */
+    border-radius: 4px;       /* Gently rounded corners */
+    transition: all 0.3s ease;/* Smooth animation transition on hover */
+}
+
+/* Inverts button colors to solid gold when hovered */
+.hero-btn:hover {
+    background-color: #c5a059;/* Solid gold background fill on hover */
+    color: #21152a;           /* Deep plum text color on hover */
+}
+
+
+/* ==========================================================
+   3. BLOG LIST & WIX GRID STYLING (blog_list.html)
+   ========================================================== */
+/* Centers and constrains width for the blog list container page */
+.blog-list-container {
+    max-width: 1200px;        /* Sets maximum width boundary */
+    margin: 0 auto;           /* Centers the container on the page */
+    padding: 40px 20px;       /* Adds inner breathing room padding */
+}
+
+/* Arranges blog cards into a responsive 3-column grid */
+.blog-list {
+    display: grid;            /* Uses CSS Grid layout system */
+    grid-template-columns: repeat(3, 1fr); /* Creates exactly 3 equal-width columns */
+    gap: 30px;                /* Sets space gap between grid cards */
+    width: 100%;              /* Takes full available width */
+    margin-top: 20px;         /* Spacing above the grid */
+}
+
+/* Styles the individual Wix-style image card container */
+.blog-card {
+    position: relative;       /* Establishes positioning context for child elements */
+    width: 100%;              /* Full column width */
+    height: 380px;            /* Fixed uniform card height */
+    border-radius: 12px;      /* Rounded card corners */
+    overflow: hidden;         /* Clips content that overflows boundaries */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Soft shadow depth */
+    display: flex;            /* Uses flexbox for inner stacking */
+    flex-direction: column;   /* Stacks inner elements vertically */
+    justify-content: flex-end;/* Pushes content down to the bottom of the card */
+    background-color: #1a1a1a;/* Fallback dark background color */
+}
+
+/* Adds a smooth lift animation effect when hovering over a blog card */
+.blog-card:hover {
+    transform: translateY(-4px); /* Moves card slightly upward on hover */
+}
+
+/* Positions the background image to fill the card completely */
+.featured-post-image {
+    position: absolute;       /* Positions absolutely inside the relative card wrapper */
+    top: 0;                   /* Aligns to top edge */
+    left: 0;                  /* Aligns to left edge */
+    width: 100%;              /* Fills full width */
+    height: 100%;             /* Fills full height */
+    object-fit: cover;        /* Scales image to cover container without distortion */
+    object-position: center;  /* Centers image focus point */
+    z-index: 1;               /* Places image at the bottom layer */
+}
+
+/* Adds a dark gradient overlay on top of the image to make text readable */
+.blog-card-overlay {
+    position: absolute;       /* Absolute positioning over the card */
+    top: 0;                   /* Aligns to top */
+    left: 0;                  /* Aligns to left */
+    width: 100%;              /* Full width coverage */
+    height: 100%;             /* Full height coverage */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 40%, rgba(0, 0, 0, 0.85) 100%); /* Fades from transparent to dark */
+    z-index: 2;               /* Places overlay above image and below text */
+}
+
+/* Styles the text content area sitting on top of the card image */
+.card-content {
+    position: relative;       /* Relative positioning */
+    z-index: 3;               /* Places text on the very top layer above image and overlay */
+    padding: 24px;            /* Inner card padding */
+    color: #ffffff;           /* White text color */
+}
+
+/* Styles post dates inside card overlays */
+.post-date {
+    font-size: 0.8rem;        /* Small subtle text size */
+    color: #e0e0e0;           /* Light gray text color */
+    margin-bottom: 8px;       /* Spacing below date */
+    letter-spacing: 0.5px;    /* Slightly spaces out letters */
+}
+
+/* Sets alignment and size for blog list card headings */
+.blog-list h3 {
+    font-size: 1.05rem;       /* Default font size fallback */
+    line-height: 1.35;        /* Line spacing */
+    margin-bottom: 8px;       /* Bottom spacing margin */
+    text-align: center;       /* Center aligns text */
+}
+
+/* Styles clickable post titles over image cards to be crisp white */
+.blog-list h3 a {
+    color: #ffffff !important;/* Forces bright white text color */
+    text-decoration: none;    /* Removes text underlines */
+    font-size: 1.35rem;       /* Title text size */
+    font-weight: 700;         /* Bold font weight */
+    line-height: 1.3;         /* Line height spacing */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Dark drop shadow for high readability */
+}
+
+/* Turns post titles gold when hovered */
+.blog-list h3 a:hover {
+    color: #c5a059 !important;/* Accent gold hover color */
+}
+
+
+/* ==========================================================
+   4. REFLECTION LIST STYLING (reflection_list.html)
+   ========================================================== */
+/* Centers and constrains width for the reflection list container page */
+.reflection-list-container {
+    max-width: 1200px;        /* Sets maximum width boundary */
+    margin: 0 auto;           /* Centers the container on the page */
+    padding: 40px 20px;       /* Adds inner breathing room padding */
+}
+
+/* Arranges reflection list elements into a responsive 3-column grid */
+.reflection-list {
+    display: grid;            /* Uses CSS Grid layout system */
+    grid-template-columns: repeat(3, 1fr); /* Creates exactly 3 equal-width columns */
+    gap: 30px;                /* Sets space gap between grid cards */
+    width: 100%;              /* Takes full available width */
+    margin-top: 20px;         /* Spacing above the grid */
+}
+
+/* Styles heading alignment specifically for reflection list cards */
+.reflection-list h3 {
+    font-size: 0.85rem;       /* Font size */
+    line-height: 1.35;        /* Line height */
+    margin-bottom: 8px;       /* Bottom spacing */
+    text-align: left;         /* Left-aligns reflection titles */
+}
+
+
+/* ==========================================================
+   5. POST DETAIL & CONTENT STYLING (post_detail.html)
+   ========================================================== */
+/* Styles content wrapper boxes for individual post detail pages */
+.post-container {
+    max-width: 800px;         /* Limits width for optimal readability */
+    margin: 40px auto;        /* Centers container vertically and horizontally */
+    padding: 40px;            /* Adds generous inner padding */
+    background-color: #fff;   /* Clean white background card */
+    border-radius: 12px;      /* Rounded modern corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Deep shadow effect */
+}
+
+/* Styles headings inside individual post views */
+.post-container h1 {
+    font-size: 2.2rem;        /* Large clear title font size */
+    margin-bottom: 20px;      /* Spacing below heading */
+    color: #2b1b36;           /* Dark plum text color */
+    line-height: 1.3;         /* Comfortable line height spacing */
+}
+
+/* Styles body paragraphs inside individual post views */
+.post-container p {
+    font-size: 1.1rem;        /* Readable paragraph font size */
+    line-height: 1.8;         /* Line spacing for easy reading */
+    color: #333333;           /* Dark gray text color for contrast */
+    margin-bottom: 20px;      /* Spacing between paragraphs */
+}
+
+/* Emphasizes strong text elements within post bodies */
+.post-body strong {
+    font-weight: bold;        /* Makes text bold */
+    color: #2b1b36;           /* Deep plum color accent */
+}
+
+/* Styles featured single-post detail images */
+.post-detail-image {
+    display: block;           /* Treats image as a block element to allow margin centering */
+    margin: 20px auto;        /* Centers the image horizontally with vertical spacing */
+    max-width: 650px;         /* Limits maximum image width */
+    width: 100%;              /* Makes image responsive */
+    height: auto;             /* Keeps natural aspect ratio */
+    border-radius: 5px;       /* Rounds image corners slightly */
+    object-fit: cover;        /* Crops image cleanly to fit dimensions */
+}
+
+
+/* ==========================================================
+   6. ABOUT PAGE STYLING (about.html)
+   ========================================================== */
+/* Styles the static About page container block */
+.about-statement {
+    max-width: 800px;         /* Limits container width */
+    margin: 40px auto;        /* Centers container on screen */
+    padding: 40px;            /* Inner card padding */
+    background-color: #fff;   /* White background box */
+    border-radius: 12px;      /* Rounded card edges */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Soft drop shadow */
+}

@@ -1,6 +1,20 @@
 {% extends 'blog/base.html' %}
 {% block title %}Home - Christianity Post{% endblock %}
 {% block content %}
-    <h2>Welcome to Christianity Post</h2>
-    <p>This is the home page of the Christianity Post blog.</p>
+    <!-- Editorial Hero Banner -->
+    <section class="editorial-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge">Featured Message</span>
+            <h1>Walking in Faith Through the Trials of Modern Life</h1>
+            <p>Discover how spiritual endurance, grace, and timeless biblical truths anchor us through every season.</p>
+            <a href="{% url 'blog:blog_list' %}" class="hero-btn">Explore Articles</a>
+        </div>
+    </section>
+
+    <!-- Main Welcome Section -->
+    <div class="post-container" style="text-align: center; margin-top: 40px;">
+        <h2>Welcome to Christianity Post</h2>
+        <p>This is the home page of the Christianity Post blog. Explore our latest reflections, devotionals, and messages designed to uplift your walk with Christ.</p>
+    </div>
 {% endblock %}
