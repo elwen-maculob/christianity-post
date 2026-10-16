@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% block title %}reflection_list - Christianity Post{% endblock %}
+{% block content %}
+<div class="reflection-list-container">
+    <h2>Timely Reflections</h2>
+
+    <div class="reflection-list">
+        {% for post in reflection_list %}
+            <div class="reflection-card">
+                <a href="{% url 'blog:post_detail' post.slug %}">
+                    <h3>{{ post.title }}</h3>
+                </a>
+                <p class="post-date">{{ post.created_on|date:"F j, Y" }}</p>
+                <p class="post-snippet">{{ post.description }}</p>
+            </div>
+        {% empty %}
+            <p>No blog posts available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

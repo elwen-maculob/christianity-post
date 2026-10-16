@@ -43,11 +43,6 @@
     color: #fff;
 }
 
-.featured-post-image {
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 20px;
-}
 .post-detail-image {
     display: block;
     margin: 20px auto;
@@ -58,14 +53,20 @@
     object-fit: cover;
 }
 .site-logo {
-    max-width: 100px;
-    height: 100px;
+    background: transparent !important;
+    max-width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: contain;
     margin-right: 10px;
-    background-color: #fff;
+    mix-blend-mode: screen;
 }
 
+.blog-list-container, .reflection-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
 .post-container {
     max-width: 800px;
     margin: 40px auto;
@@ -101,11 +102,12 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-.blog-list {
+.blog-list, .reflection-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    margin: 30px 0;
+    width: 100%;
+    margin-top: 20px;
 }
 .blog-list h3 {
     font-size: 1.05rem;
@@ -114,35 +116,66 @@
     text-align: center;
 }
 .blog-list h3 a {
-    color: #2b1b36;
+    color: #ffffff;
     text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 .blog-list h3 a:hover {
     color: #c5a059;
 }
 .featured-post-image{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    max-height: 260px;
-    object-fit: contain;
-    margin: 0 auto;
+    height: 100%;
+    object-fit: cover;
     object-position: center;
-    background-color: #f9f9f9;
-    display: block;
+    z-index: 1;
 }
 .blog-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: relative;
+    width: 100%;
+    height: 380px;
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease;
+    justify-content: flex-end;
+    background-color: #1a1a1a;
+}
+.blog-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 40%, rgba(0, 0, 0, 0.85) 100%);
+    z-index: 2;
+}
+.card-content {
+    position: relative;
+    z-index: 3;
+    padding: 24px;
+    color: #ffffff;
 }
 .blog-card:hover {
     transform: translateY(-4px);
 }
 .post-date {
     font-size: 0.8rem;
-    color: #666666;
+    color: #e0e0e0;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.reflection-list h3 {
+    font-size: 0.85rem;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    text-align: left;
 }

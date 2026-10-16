@@ -19,6 +19,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
     category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, blank=True, related_name='posts')
     content = models.TextField()
+    description = models.TextField(max_length=300, blank=True, null=True)
     verse_highlight = models.TextField(blank=True, null=True, help_text="Optional scripture verse to meditate on.")
     featured_image = models.ImageField(upload_to='featured_images/', blank=True, null=True)
     created_on = models.DateField()

@@ -7,13 +7,18 @@
     <div class="blog-list">
         {% for post in blog_list %}
             <div class="blog-card">
-                <a href="{% url 'blog:post_detail' post.slug %}">
-                    {% if post.featured_image %}
-                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="featured-post-image">
-                    {% endif %}
-                    <h3>{{ post.title }}</h3>
-                </a>
-                <p class="post-date">{{ post.created_on|date:"F j, Y" }}</p>
+                {% if post.featured_image %}
+                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="featured-post-image">
+                {% endif %}
+
+                <div class="blog-card-overlay"></div>
+
+                <div class="card-content">
+                    <p class="post-date">{{ post.created_on|date:"F j, Y" }}</p>
+                    <a href="{% url 'blog:post_detail' post.slug %}">
+                        <h3>{{ post.title }}</h3>
+                    </a>
+                </div>
             </div>
         {% empty %}
             <p>No blog posts available.</p>

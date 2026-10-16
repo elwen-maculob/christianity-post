@@ -5,15 +5,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Christianity Post{% endblock %}</title>
-        <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/custom.css' %}">
     </head>
     <body>
         <header class="site-header">
-            <img src="{% static 'blog/featured_images/cp_logo.jpg' %}" alt="Christianity Post Logo" class="site-logo">
+            <img src="{% static 'blog/featured_images/cp_logo.png' %}" alt="Christianity Post Logo" class="site-logo">
             <h1>Christianity Post</h1>
             <ul>
                 <li><a href="{% url 'blog:home' %}">Home</a></li>
                 <li><a href="{% url 'blog:blog_list' %}">Blog</a></li>
+                <li><a href="{% url 'blog:reflection_list' %}">Reflection</a></li>
                 <li><a href="{% url 'blog:about' %}">About</a></li>
             </ul>
         </header>

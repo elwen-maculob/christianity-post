@@ -21,7 +21,7 @@ class BlogListView(ListView):
 class ReflectionListView(ListView):
     model = Post
     template_name="blog/reflection_list.html"
-    context_object_name="reflections"
+    context_object_name="reflection_list"
     def get_queryset(self):
         return Post.objects.filter(category__name="Reflection", status=1).order_by("-created_on")
 #4. Post detail view
