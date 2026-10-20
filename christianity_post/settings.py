@@ -81,6 +81,7 @@ DATABASES = {
     'default': dj_database_url.config(
         default='mysql://root:mysql@localhost:3306/christianity_post_db',
         conn_max_age=600
+        ssl_require=False
     )
 }
 
