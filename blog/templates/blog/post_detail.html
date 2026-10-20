@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load blog_extras %}
 {% block title %}Post Detail - Christianity Post{% endblock %}
 {% block content %}
     <div class="post-container">
@@ -10,4 +11,5 @@
             <p>{{ post.content|safe|linebreaks }}</p>
         </div>
     </div>
+    {% show_featured_posts %}
 {% endblock %}

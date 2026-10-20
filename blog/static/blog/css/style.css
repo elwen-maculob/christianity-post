@@ -157,6 +157,28 @@ main {
     color: #21152a;           /* Deep plum text color on hover */
 }
 
+/* Welcome message styles */
+.welcome-title {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.message {
+    text-align: left;
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto;
+}
+.doxology {
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    margin-top: 25px;
+}
+.blessing {
+    text-align: center;
+    font-weight: 500;
+}
 
 /* ==========================================================
    3. BLOG LIST & WIX GRID STYLING (blog_list.html)
@@ -257,7 +279,20 @@ main {
 .blog-list h3 a:hover {
     color: #c5a059 !important;/* Accent gold hover color */
 }
+/* Style blog card title links to be white and readable */
+.blog-card .card-content a {
+    color: #ffffff !important;
+    text-decoration: none;
+}
 
+.blog-card .card-content a h3 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Adds a dark drop shadow for contrast */
+}
+
+.blog-card .card-content a:hover h3 {
+    text-decoration: underline;
+}
 
 /* ==========================================================
    4. REFLECTION LIST STYLING (reflection_list.html)
@@ -345,4 +380,30 @@ main {
     background-color: #fff;   /* White background box */
     border-radius: 12px;      /* Rounded card edges */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Soft drop shadow */
+}
+* ==========================================================
+   7. FEATURED POST STYLING (featured_snippet.html)
+   ========================================================== */
+/* Featured Section Container Styles */
+.featured-section-container {
+    max-width: 1200px;
+    margin: 60px auto 40px auto;
+    padding: 0 20px;
+}
+
+.featured-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.featured-header h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.featured-header p {
+    color: #6b7280;
+    font-size: 1rem;
 }
