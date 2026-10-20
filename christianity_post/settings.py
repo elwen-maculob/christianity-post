@@ -80,8 +80,8 @@ WSGI_APPLICATION = 'christianity_post.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         default='mysql://root:mysql@localhost:3306/christianity_post_db',
-        conn_max_age=600
-        ssl_require=False
+        conn_max_age=600,
+        ssl_require=False,
     )
 }
 
