@@ -3,6 +3,7 @@ certifi==2026.7.22
 charset-normalizer==3.5.2
 Django>=5.0,<6.0
 djangorestframework==3.18.3
+dj-database-url
 gunicorn==26.2.0
 idna==3.20
 mysqlclient==2.3.0
@@ -10,5 +11,5 @@ pillow==12.3.0
 psycopg2-binary==2.9.13
 python-dotenv==1.2.4
 requests==2.34.2
-sqlparse==0.6.0
+sqlparse==0.5.3
 urllib3==2.8.0
