@@ -147,5 +147,5 @@ MAILERS = {
     },
 }
 
-MEDIA_URL = '/featured_images/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'featured_images')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
