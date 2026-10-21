@@ -21,7 +21,7 @@ class Post(models.Model):
     content = models.TextField()
     description = models.TextField(max_length=300, blank=True, null=True)
     verse_highlight = models.TextField(blank=True, null=True, help_text="Optional scripture verse to meditate on.")
-    featured_image = models.ImageField(upload_to='media/', blank=True, null=True)
+    featured_image = models.ImageField(upload_to='', blank=True, null=True)
     created_on = models.DateField()
     updated_on = models.DateField()
     status = models.IntegerField(choices=STATUS_CHOICES, default=0)
