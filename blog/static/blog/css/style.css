@@ -328,44 +328,56 @@ main {
 /* Styles content wrapper boxes for individual post detail pages */
 .post-container {
     max-width: 800px;         /* Limits width for optimal readability */
-    margin: 40px auto;        /* Centers container vertically and horizontally */
-    padding: 40px;            /* Adds generous inner padding */
+    margin: 50px auto;        /* Centers container vertically and horizontally */
+    padding: 50px 60px;            /* Adds generous inner padding */
     background-color: #fff;   /* Clean white background card */
     border-radius: 12px;      /* Rounded modern corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Deep shadow effect */
+    box-shadow: 0 4px 25px rgba(33, 21, 42, 0.08); /* Deep shadow effect */
 }
 
 /* Styles headings inside individual post views */
 .post-container h1 {
-    font-size: 2.2rem;        /* Large clear title font size */
-    margin-bottom: 20px;      /* Spacing below heading */
-    color: #2b1b36;           /* Dark plum text color */
-    line-height: 1.3;         /* Comfortable line height spacing */
+    font-size: 2.4rem;        /* Large clear title font size */
+    margin-bottom: 25px;      /* Spacing below heading */
+    color: #21152a;           /* Dark plum text color */
+    line-height: 1.25;         /* Comfortable line height spacing */
+    font-weight: 700;
 }
 
 /* Styles body paragraphs inside individual post views */
 .post-container p {
     font-size: 1.1rem;        /* Readable paragraph font size */
-    line-height: 1.8;         /* Line spacing for easy reading */
+    line-height: 1.85;         /* Line spacing for easy reading */
     color: #333333;           /* Dark gray text color for contrast */
-    margin-bottom: 20px;      /* Spacing between paragraphs */
+    margin-bottom: 24px;      /* Spacing between paragraphs */
 }
 
 /* Emphasizes strong text elements within post bodies */
-.post-body strong {
-    font-weight: bold;        /* Makes text bold */
-    color: #2b1b36;           /* Deep plum color accent */
+.post-body strong, .post-container strong {
+    font-weight: 700;        /* Makes text bold */
+    color: #21152a;           /* Deep plum color accent */
 }
-
+/* Styles italicized quotes or Bible verses nicely */
+.post-container i, .post-container em {
+    display: block;
+    margin: 20px 0;
+    padding-left: 20px;
+    border-left: 3px solid #c5a059; /* Elegant gold accent border for quotes */
+    color: #4a4a4a;
+    font-style: italic;
+    background-color: #fcfbfa;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 /* Styles featured single-post detail images */
 .post-detail-image {
     display: block;           /* Treats image as a block element to allow margin centering */
-    margin: 20px auto;        /* Centers the image horizontally with vertical spacing */
-    max-width: 650px;         /* Limits maximum image width */
-    width: 100%;              /* Makes image responsive */
+    margin: 25px auto 35px auto;        /* Centers the image horizontally with vertical spacing */
+    max-width: 100%;         /* Limits maximum image width */             
     height: auto;             /* Keeps natural aspect ratio */
-    border-radius: 5px;       /* Rounds image corners slightly */
+    border-radius: 8px;       /* Rounds image corners slightly */
     object-fit: cover;        /* Crops image cleanly to fit dimensions */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle depth shadow */
 }
 
 
