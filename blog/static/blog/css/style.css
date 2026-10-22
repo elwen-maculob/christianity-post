@@ -439,3 +439,30 @@ main {
     color: #6b7280;
     font-size: 1rem;
 }
+/* Container for the cards */
+.blog-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Individual card container */
+.blog-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensures corners clip cleanly */
+    border-radius: 12px; /* Set desired card corner radius */
+}
+
+/* Featured image alignment and uniform cropping */
+.blog-card img {
+    width: 100%;
+    height: 220px; /* Fixed height so both images match exactly */
+    object-fit: cover; /* Crops image cleanly without stretching */
+    object-position: center; /* Keeps center focus */
+    display: block;
+    margin: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
