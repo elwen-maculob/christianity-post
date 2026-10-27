@@ -396,14 +396,13 @@ main {
     align-items: center;
     gap: 10px;
     margin-bottom: 12px;
-    color: #666;
+    color: #666666;
     font-size: 0.95rem;
+    font-family: inherit;
+    font-style: normal;
 }
-
 .post-updated-date {
-    color: #666;
-    font-size: 0.9rem;
-    margin-top: -5px;
+    margin-top: -8px;
     margin-bottom: 20px;
 }
 
