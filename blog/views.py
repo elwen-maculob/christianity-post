@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Post
+from django.http import HttpResponse
 
 # Create your views here.
+def health_check(request):
+    return HttpResponse("OK", status=200)
+
 #1. For homepage
 class HomeView(ListView):
     model = Post
