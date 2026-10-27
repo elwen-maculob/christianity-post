@@ -10,7 +10,7 @@
 
         <!-- Author & Published Date Header -->
         <div class="post-meta-header">
-            <span>{{ post.author }}</span>
+            <span>{{ post.author.get_full_name|default:post.author }}</span>
             <span>&middot;</span>
             <span>{{ post.created_on|date:"F j, Y" }}</span>
         </div>
