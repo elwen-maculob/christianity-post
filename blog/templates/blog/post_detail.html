@@ -20,9 +20,9 @@
 
         <!-- Updated Date if modified -->
         {% if post.updated_on and post.updated_on|date:"Y-m-d" != post.created_on|date:"Y-m-d" %}
-            <p class="post-updated-date post-updated-date">
+            <div class="post-updated-date post-updated-date">
                 <span>Updated: {{ post.updated_on|date:"F j, Y" }}</span>
-            </p>
+            </div>
         {% endif %}
 
         <!-- Post Body Content -->

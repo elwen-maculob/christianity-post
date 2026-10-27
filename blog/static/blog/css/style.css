@@ -288,31 +288,85 @@ main {
     text-decoration: underline;
 }
 
-/* ==========================================================
-   4. REFLECTION LIST STYLING (reflection_list.html)
-   ========================================================== */
-/* Centers and constrains width for the reflection list container page */
+/* =======================================================
+   4. TIMELY REFLECTIONS LIST STYLING (reflection_list.html)
+   ======================================================= */
+
 .reflection-list-container {
-    max-width: 1200px;        /* Sets maximum width boundary */
-    margin: 0 auto;           /* Centers the container on the page */
-    padding: 40px 20px;       /* Adds inner breathing room padding */
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(33, 21, 42, 0.06);
+    border: 1px solid rgba(33, 21, 42, 0.04);
 }
 
-/* Arranges reflection list elements into a responsive 3-column grid */
+/* Page / Section Heading */
+.reflection-list-container > h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #21152a; /* Deep plum brand color */
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #c5a059; /* Elegant gold accent underline */
+}
+
+/* Grid layout for reflection cards */
 .reflection-list {
-    display: grid;            /* Uses CSS Grid layout system */
-    grid-template-columns: repeat(3, 1fr); /* Creates exactly 3 equal-width columns */
-    gap: 30px;                /* Sets space gap between grid cards */
-    width: 100%;              /* Takes full available width */
-    margin-top: 20px;         /* Spacing above the grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 25px;
 }
 
-/* Styles heading alignment specifically for reflection list cards */
-.reflection-list h3 {
-    font-size: 0.85rem;       /* Font size */
-    line-height: 1.35;        /* Line height */
-    margin-bottom: 8px;       /* Bottom spacing */
-    text-align: left;         /* Left-aligns reflection titles */
+/* Individual Card Styling */
+.reflection-card {
+    padding: 24px;
+    background-color: #fcfbfa; /* Warm off-white background */
+    border-radius: 8px;
+    border-left: 4px solid #c5a059; /* Gold accent border on the left */
+    border-top: 1px solid rgba(33, 21, 42, 0.04);
+    border-right: 1px solid rgba(33, 21, 42, 0.04);
+    border-bottom: 1px solid rgba(33, 21, 42, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reflection-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(33, 21, 42, 0.08);
+}
+
+/* Card Title Link */
+.reflection-card h3 a {
+    font-size: 1.2rem;
+    color: #21152a;
+    text-decoration: none;
+    line-height: 1.4;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+}
+
+.reflection-card h3 a:hover {
+    color: #c5a059; /* Gold hover effect */
+}
+
+/* Post Date */
+.reflection-card .post-date {
+    font-size: 0.85rem;
+    color: #666666;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Post Snippet / Description */
+.reflection-card .post-snippet {
+    font-size: 0.95rem;
+    color: #444444;
+    line-height: 1.6;
+    margin: 0;
 }
 
 
@@ -404,8 +458,9 @@ main {
 .post-updated-date {
     margin-top: -8px;
     margin-bottom: 20px;
+    color: #666666;     /* Ensures matching color */
+    font-size: 0.95rem; /* Ensures matching font size */
 }
-
 /* ==========================================================
    6. ABOUT PAGE STYLING (about.html)
    ========================================================== */
