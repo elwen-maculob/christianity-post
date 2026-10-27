@@ -385,13 +385,11 @@ main {
 }
 /* Styles featured single-post detail images */
 .post-detail-image {
-    display: block;           /* Treats image as a block element to allow margin centering */
-    margin: 25px auto 35px auto;        /* Centers the image horizontally with vertical spacing */
-    max-width: 100%;         /* Limits maximum image width */             
-    height: auto;             /* Keeps natural aspect ratio */
-    border-radius: 8px;       /* Rounds image corners slightly */
-    object-fit: cover;        /* Crops image cleanly to fit dimensions */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Subtle depth shadow */
+    width: 100%;
+    max-height: 500px; /* Limits super tall images */
+    object-fit: contain; /* Keeps full image aspect ratio without cropping */
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 
