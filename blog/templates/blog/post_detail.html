@@ -1,15 +1,35 @@
 {% extends 'blog/base.html' %}
 {% load blog_extras %}
-{% block title %}Post Detail - Christianity Post{% endblock %}
+{% block title %}{{ post.title }} – Christianity Post{% endblock %}
 {% block content %}
     <div class="post-container">
+        <!-- Featured Image -->
         {% if post.image_url %}
             <img src="{{ post.image_url }}" alt="{{ post.title }}" class="post-detail-image">
         {% endif %}
-        <h1>{{ post.title }}</h1>
+
+        <!-- Author & Published Date Header -->
+        <div class="post-meta-header">
+            <span>{{ post.author }}</span>
+            <span>&middot;</span>
+            <span>{{ post.created_on|date:"F j, Y" }}</span>
+        </div>
+
+        <!-- Post Title -->
+        <h1 class="post-detail-title">{{ post.title }}</h1>
+
+        <!-- Updated Date if modified -->
+        {% if post.updated_on and post.updated_on|date:"Y-m-d" != post.created_on|date:"Y-m-d" %}
+            <p class="post-updated-date">
+                Updated: {{ post.updated_on|date:"F j, Y" }}
+            </p>
+        {% endif %}
+
+        <!-- Post Body Content -->
         <div class="post-body">
             <p>{{ post.content|safe|linebreaks }}</p>
         </div>
     </div>
+
     {% show_featured_posts %}
 {% endblock %}

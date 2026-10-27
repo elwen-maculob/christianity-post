@@ -391,7 +391,21 @@ main {
     border-radius: 8px;
     margin-bottom: 20px;
 }
+.post-meta-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #666;
+    font-size: 0.95rem;
+}
 
+.post-updated-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
 
 /* ==========================================================
    6. ABOUT PAGE STYLING (about.html)
