@@ -1,80 +1,95 @@
 /* ==========================================================
 1. GLOBAL & BASE LAYOUT (base.html)
    ========================================================== */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+html {
     box-sizing: border-box;
+    width: 100%;
+    height: 100%;
 }
 
 * {
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* Prevents horizontal scroll on mobile */
+}
+
 main {
-    flex: 1;
+    flex: 1; /* Pushes footer down properly on short pages */
 }
 
 /* Styles the top navigation bar header */
 .site-header {
-    background-color: #21152a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allows items to wrap nicely on smaller screens */
+    background-color: #21152a;/* Deep plum background color */
+    padding: 15px 30px;       /* Adds inner spacing inside the header */
+    display: flex;            /* Uses flexbox to space out logo/title and nav links */
+    justify-content: space-between; /* Pushes items to opposite left and right edges */
+    align-items: center;      /* Vertically centers items in the header */
 }
 
 /* Styles the brand title/logo container inside the header */
 .site-header h1 {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #c5a059;
+    display: flex;            /* Aligns inner elements flexibly */
+    align-items: center;      /* Centers logo image and text vertically */
+    text-decoration: none;    /* Removes underlines */
+    color: #c5a059;           /* Gold brand text color */
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
+/* Sets default link colors in the header */
 .site-header a {
-    text-decoration: none;
-    color: #fff;
+    text-decoration: none;    /* Removes default link underlines */
+    color: #fff;              /* White link text color */
 }
 
+/* Changes link color to gold when hovered */
 .site-header a:hover {
-    color: #c5a059;
+    color: #c5a059;           /* Gold accent on mouse hover */
 }
 
+/* Styles the navigation link list in the header */
 .site-header ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    gap: 20px;
+    display: flex;            /* Places navigation links side-by-side horizontally */
+    list-style-type: none;    /* Removes bullet points from the list */
+    margin: 0;                /* Removes default margins */
+    padding: 0;               /* Removes default padding */
+    gap: 25px;                /* Adds even spacing between navigation items */
 }
 
+/* Styles the header circular brand logo image */
 .site-logo {
-    background: transparent !important;
-    max-width: 80px;         /* Reduced size slightly so it fits mobile headers better */
-    height: 80px;            
-    border-radius: 50%;
-    object-fit: contain;
-    margin-right: 10px;
-    mix-blend-mode: screen;
+    background: transparent !important; /* Forces transparent background backdrop */
+    max-width: 70px;         /* Sets max width constraint for the logo */
+    height: 70px;            /* Sets fixed height */
+    border-radius: 50%;       /* Crops the logo into a perfect circle */
+    object-fit: contain;      /* Ensures the whole logo fits inside its box without cropping */
+    margin-right: 15px;       /* Adds spacing to the right of the logo */
+    mix-blend-mode: screen;   /* Blends white backdrops smoothly into the dark header */
 }
 
+/* Styles the bottom website footer bar */
 .site-footer {
-    background-color: #21152a;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #21152a;/* Matches the deep plum header background */
+    padding: 20px 30px;       /* Adds inner spacing inside the footer */
+    display: flex;            /* Uses flexbox layout */
+    justify-content: space-between; /* Spaces footer elements across the width */
+    align-items: center;      /* Vertically centers footer contents */
+    width: 100%;
+    margin-top: auto;
 }
 
+/* Styles the copyright text inside the footer */
 .site-footer p {
-    margin: 0;
-    color: #fff;
+    margin: 0;                /* Removes default paragraph margins */
+    color: #fff;              /* White text color */
 }
 
 
@@ -82,69 +97,95 @@ main {
    2. HOME PAGE & EDITORIAL HERO (index.html)
    ========================================================== */
 .editorial-hero {
-    position: relative;
-    width: 100%;
-    height: 420px;
-    background: linear-gradient(rgba(33, 21, 42, 0.7), rgba(33, 21, 42, 0.85)), url('https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=1600&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #ffffff;
-    padding: 0 20px;
+    position: relative;       
+    width: 100%;              
+    height: 480px;            
+    background: linear-gradient(rgba(33, 21, 42, 0.7), rgba(33, 21, 42, 0.85)), url('https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=1600&auto=format&fit=crop'); 
+    background-size: cover;   
+    background-position: center; 
+    display: flex;            
+    align-items: center;      
+    justify-content: center;  
+    text-align: center;       
+    color: #ffffff;           
+    padding: 0 20px;          
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3); 
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
+    position: relative;       
+    z-index: 2;               
+    max-width: 800px;         
 }
 
 .hero-badge {
-    display: inline-block;
+    display: inline-block;    
     background-color: #c5a059;
-    color: #21152a;
-    font-size: 0.75rem;
-    font-weight: 700;
+    color: #21152a;           
+    font-size: 0.75rem;       
+    font-weight: 700;         
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    margin-bottom: 15px;
+    letter-spacing: 1.5px;    
+    padding: 6px 14px;        
+    border-radius: 20px;      
+    margin-bottom: 15px;      
 }
 
 .editorial-hero h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 15px;
-    line-height: 1.2;
+    font-size: 2.8rem;        
+    font-weight: 700;         
+    color: #ffffff;           
+    margin-bottom: 15px;      
+    line-height: 1.2;         
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5); 
 }
 
 .editorial-hero p {
-    font-size: 1rem;
-    color: #e0e0e0;
-    margin-bottom: 25px;
-    line-height: 1.6;
+    font-size: 1.15rem;       
+    color: #e0e0e0;           
+    margin-bottom: 25px;      
+    line-height: 1.6;         
 }
 
 .hero-btn {
-    display: inline-block;
-    background-color: transparent;
-    color: #c5a059;
+    display: inline-block;    
+    background-color: transparent; 
+    color: #c5a059;           
     border: 2px solid #c5a059;
-    padding: 10px 24px;
-    font-size: 0.95rem;
-    font-weight: 650;
-    text-decoration: none;
-    border-radius: 4px;
+    padding: 10px 24px;       
+    font-size: 0.95rem;       
+    font-weight: 650;         
+    text-decoration: none;    
+    border-radius: 4px;       
+    transition: all 0.3s ease;
 }
 
 .hero-btn:hover {
     background-color: #c5a059;
-    color: #21152a;
+    color: #21152a;           
+}
+
+/* Welcome message styles */
+.welcome-title {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.message {
+    text-align: left;
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto;
+}
+.doxology {
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+    margin-top: 25px;
+}
+.blessing {
+    text-align: center;
+    font-weight: 500;
 }
 
 
@@ -152,30 +193,34 @@ main {
    3. BLOG LIST & WIX GRID STYLING (blog_list.html)
    ========================================================== */
 .blog-list-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 15px;
+    max-width: 1200px;        
+    margin: 0 auto;           
+    padding: 40px 20px;       
 }
 
 .blog-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    width: 100%;
-    margin-top: 20px;
+    display: grid;            
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;                
+    width: 100%;              
+    margin-top: 20px;         
 }
 
 .blog-card {
-    position: relative;
-    width: 100%;
-    height: 380px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
+    position: relative;       
+    width: 100%;              
+    height: 380px;            
+    border-radius: 12px;      
+    overflow: hidden;         
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
+    display: flex;            
+    flex-direction: column;   
     justify-content: flex-end;
     background-color: #1a1a1a;
+}
+
+.blog-card:hover {
+    transform: translateY(-4px); 
 }
 
 .blog-image {
@@ -189,20 +234,27 @@ main {
 }
 
 .blog-card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 30%, rgba(0, 0, 0, 0.9) 100%);
-    z-index: 2;
+    position: absolute;       
+    top: 0;                   
+    left: 0;                  
+    width: 100%;              
+    height: 100%;             
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 40%, rgba(0, 0, 0, 0.85) 100%); 
+    z-index: 2;               
 }
 
 .card-content {
-    position: relative;
-    z-index: 3;
-    padding: 20px;
-    color: #ffffff;
+    position: relative;       
+    z-index: 3;               
+    padding: 24px;            
+    color: #ffffff;           
+}
+
+.post-date {
+    font-size: 0.8rem;        
+    color: #e0e0e0;           
+    margin-bottom: 8px;       
+    letter-spacing: 0.5px;    
 }
 
 .blog-card .card-content a {
@@ -212,36 +264,216 @@ main {
 
 .blog-card .card-content a h3 {
     color: #ffffff !important;
-    font-size: 1.25rem;
-    margin: 5px 0 0 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); 
+}
+
+.blog-card .card-content a:hover h3 {
+    text-decoration: underline;
 }
 
 
 /* ==========================================================
-   4. TIMELY REFLECTIONS & OTHER CONTAINERS
+   4. TIMELY REFLECTIONS LIST STYLING (reflection_list.html)
    ========================================================== */
-.reflection-list-container, .post-container, .about-statement {
+.reflection-list-container {
     max-width: 900px;
-    margin: 30px auto;
-    padding: 20px;
+    margin: 40px auto;
+    padding: 40px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(33, 21, 42, 0.06);
+    border: 1px solid rgba(33, 21, 42, 0.04);
+}
+
+.reflection-list-container > h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #21152a; 
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #c5a059; 
 }
 
 .reflection-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 25px;
+}
+
+.reflection-card {
+    padding: 24px;
+    background-color: #fcfbfa; 
+    border-radius: 8px;
+    border-left: 4px solid #c5a059; 
+    border-top: 1px solid rgba(33, 21, 42, 0.04);
+    border-right: 1px solid rgba(33, 21, 42, 0.04);
+    border-bottom: 1px solid rgba(33, 21, 42, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reflection-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(33, 21, 42, 0.08);
+}
+
+.reflection-card h3 a {
+    font-size: 1.2rem;
+    color: #21152a;
+    text-decoration: none;
+    line-height: 1.4;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+}
+
+.reflection-card h3 a:hover {
+    color: #c5a059; 
+}
+
+.reflection-card .post-date {
+    font-size: 0.85rem;
+    color: #666666;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.reflection-card .post-snippet {
+    font-size: 0.95rem;
+    color: #444444;
+    line-height: 1.6;
+    margin: 0;
 }
 
 
 /* ==========================================================
-   5. MOBILE RESPONSIVE OVERRIDES (Phones < 768px)
+   5. POST DETAIL & CONTENT STYLING (post_detail.html)
+   ========================================================== */
+.post-container {
+    max-width: 800px;         
+    margin: 50px auto;        
+    padding: 50px 60px;            
+    background-color: #fff;   
+    border-radius: 12px;      
+    box-shadow: 0 4px 25px rgba(33, 21, 42, 0.08); 
+}
+
+.post-container h1 {
+    font-size: 2.4rem;        
+    margin-bottom: 25px;      
+    color: #21152a;           
+    line-height: 1.25;         
+    font-weight: 700;
+}
+
+.post-container p {
+    font-size: 1.1rem;        
+    line-height: 1.85;         
+    color: #333333;           
+    margin-bottom: 22px;      
+}
+
+.post-container h2, 
+.post-container h3, 
+.post-container h4 {
+    color: #21152a;           
+    margin-top: 40px;         
+    margin-bottom: 15px;      
+    font-weight: 700;         
+    line-height: 1.3;         
+}
+
+.post-body strong, .post-container strong {
+    font-weight: 700;        
+    color: #21152a;           
+}
+
+.post-container i, .post-container em {
+    display: block;
+    margin: 20px 0;
+    padding-left: 20px;
+    border-left: 3px solid #c5a059; 
+    color: #4a4a4a;
+    font-style: italic;
+    background-color: #fcfbfa;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.post-detail-image {
+    width: 100%;
+    max-height: 500px; 
+    object-fit: contain; 
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.post-meta-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #666666;
+    font-size: 0.95rem;
+}
+
+.post-updated-date {
+    margin-top: -8px;
+    margin-bottom: 20px;
+    color: #666666;     
+    font-size: 0.95rem; 
+}
+
+
+/* ==========================================================
+   6. ABOUT PAGE STYLING (about.html)
+   ========================================================== */
+.about-statement {
+    max-width: 800px;         
+    margin: 40px auto;        
+    padding: 40px;            
+    background-color: #fff;   
+    border-radius: 12px;      
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+
+/* ==========================================================
+   7. FEATURED POST STYLING (featured_snippet.html)
+   ========================================================== */
+.featured-section-container {
+    max-width: 1200px;
+    margin: 60px auto 40px auto;
+    padding: 0 20px;
+}
+
+.featured-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.featured-header h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.featured-header p {
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+
+/* ==========================================================
+   8. MOBILE RESPONSIVE OVERRIDES (Phones < 768px)
    ========================================================== */
 @media (max-width: 768px) {
-    /* Stack header items nicely so navigation links reappear */
     .site-header {
         flex-direction: column;
         align-items: center;
@@ -267,22 +499,23 @@ main {
         flex-direction: column;
     }
 
-    /* Force blog grids and reflection grids into a single clear column */
+    /* Stack cards into a single clean column on mobile */
     .blog-list, 
     .reflection-list {
         grid-template-columns: 1fr !important;
         gap: 20px !important;
     }
 
-    /* Ensure cards take full mobile width neatly */
     .blog-card {
         height: 320px;
     }
 
     .blog-list-container, 
     .reflection-list-container, 
-    .post-container {
-        padding: 15px !important;
-        margin: 15px 10px !important;
+    .post-container,
+    .about-statement {
+        padding: 20px 15px !important;
+        margin: 20px 10px !important;
+        width: auto !important;
     }
 }
