@@ -528,3 +528,52 @@ main {
         grid-template-columns: 1fr !important;
     }
 }
+/* =======================================================
+   8. GLOBAL MOBILE RESPONSIVE FIXES
+   ======================================================= */
+
+/* Force all layout elements to respect screen boundaries */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Make headers and navigation full-width */
+header, 
+.site-header, 
+.navbar, 
+.header-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+}
+
+/* Allow hero banner and cards to scale down on phones */
+@media (max-width: 768px) {
+    .featured-post, 
+    .hero-banner, 
+    .welcome-card, 
+    .post-container, 
+    .reflection-list-container,
+    .timely-reflections-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    /* Stack grid elements vertically on mobile */
+    .reflection-list, 
+    .grid-container {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+}
