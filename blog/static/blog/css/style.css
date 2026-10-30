@@ -63,7 +63,12 @@ main {
     padding: 0;               /* Removes default padding */
     gap: 25px;                /* Adds even spacing between navigation items */
 }
-
+/* Sets a refined, balanced font size for desktop and mobile nav links */
+.site-header ul li a {
+    font-size: 0.95rem;     /* Slightly smaller and more professional */
+    font-weight: 500;       /* Medium weight for clean legibility */
+    letter-spacing: 0.5px;  /* Subtle letter spacing */
+}
 /* Styles the header circular brand logo image */
 .site-logo {
     background: transparent !important; /* Forces transparent background backdrop */
@@ -474,6 +479,39 @@ main {
    8. MOBILE RESPONSIVE OVERRIDES (Phones < 768px)
    ========================================================== */
 @media (max-width: 768px) {
+    /* 1. Make the hero banner taller on mobile to fit text nicely */
+    .editorial-hero {
+        height: auto !important;
+        min-height: 480px;
+        padding: 40px 15px !important;
+    }
+
+    /* 2. Scale down the massive heading so it doesn't crowd the edges */
+    .editorial-hero h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+        margin-top: 10px;
+        margin-bottom: 12px;
+    }
+
+    /* 3. Fix badge positioning and spacing */
+    .hero-badge {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 0.7rem;
+        padding: 4px 12px;
+    }
+
+    /* 4. Ensure subtitle and button have balanced spacing */
+    .editorial-hero p {
+        font-size: 0.95rem !important;
+        margin-bottom: 20px;
+    }
+
+    .hero-btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
     .site-header {
         flex-direction: column;
         align-items: center;
@@ -497,6 +535,9 @@ main {
     .site-header h1 {
         font-size: 1.2rem;
         flex-direction: column;
+    }
+    .site-header ul li a {
+        font-size: 0.85rem; 
     }
 
     /* Stack cards into a single clean column on mobile */
