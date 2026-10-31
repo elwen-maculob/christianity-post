@@ -15,6 +15,15 @@
             <span>{{ post.created_on|date:"F j, Y" }}</span>
         </div>
 
+        <!-- Text-to-Speech Audio Player Widget -->
+        <div class="tts-player-box" id="ttsPlayerBox">
+            <button id="ttsPlayBtn" class="tts-btn" onclick="toggleSpeech()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+                <span id="ttsBtnText">Listen to Article</span>
+            </button>
+            <span id="ttsStatus" class="tts-status"></span>
+        </div> 
+
         <!-- Post Title -->
         <h1 class="post-detail-title">{{ post.title }}</h1>
 
@@ -32,4 +41,76 @@
     </div>
 
     {% show_featured_posts %}
+
+    <!-- Text-to-Speech JavaScript Logic -->
+    <script>
+        let synth = window.speechSynthesis;
+        let utterance = null;
+        let isPlaying = false;
+        let isPaused = false;
+
+        function toggleSpeech() {
+            const btnText = document.getElementById('ttsBtnText');
+            const statusText = document.getElementById('ttsStatus');
+
+            if (!synth) {
+                alert("Sorry, your browser doesn't support text-to-speech audio.");
+                return;
+            }
+
+            if (!isPlaying && !isPaused) {
+                // Grabs text specifically from your .post-body class container
+                const articleElement = document.querySelector('.post-body');
+                const textToSpeech = articleElement ? articleElement.innerText : document.body.innerText;
+
+                utterance = new SpeechSynthesisUtterance(textToSpeech);
+                utterance.rate = 1.0; 
+                
+                utterance.onstart = function() {
+                    isPlaying = true;
+                    isPaused = false;
+                    btnText.innerText = "Pause Reading";
+                    statusText.innerText = "Playing audio...";
+                };
+
+                utterance.onend = function() {
+                    resetPlayer();
+                };
+
+                utterance.onerror = function() {
+                    resetPlayer();
+                    statusText.innerText = "Error playing audio.";
+                };
+
+                synth.speak(utterance);
+
+            } else if (isPlaying && !isPaused) {
+                synth.pause();
+                isPaused = true;
+                isPlaying = false;
+                btnText.innerText = "Resume Reading";
+                statusText.innerText = "Paused.";
+
+            } else if (!isPlaying && isPaused) {
+                synth.resume();
+                isPlaying = true;
+                isPaused = false;
+                btnText.innerText = "Pause Reading";
+                statusText.innerText = "Playing audio...";
+            }
+        }
+
+        function resetPlayer() {
+            isPlaying = false;
+            isPaused = false;
+            document.getElementById('ttsBtnText').innerText = "Listen to Article";
+            document.getElementById('ttsStatus').innerText = "";
+        }
+
+        window.addEventListener('beforeunload', function() {
+            if (synth) {
+                synth.cancel();
+            }
+        });
+    </script>
 {% endblock %}
