@@ -435,6 +435,21 @@ main {
     font-size: 0.95rem; 
 }
 
+/* Styles inline links inside article paragraphs */
+.post-body p a, 
+.post-container p a {
+    color: #c5a059;           /* Gold brand accent color */
+    text-decoration: underline; /* Keeps them underlined so readers know they are clickable */
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.post-body p a:hover, 
+.post-container p a:hover {
+    color: #21152a;           /* Turns deep plum or a darker shade on hover */
+    text-decoration: underline;
+}
+
 
 /* ==========================================================
    6. ABOUT PAGE STYLING (about.html)
